@@ -36,7 +36,7 @@ describe("Accordion test3", () => {
             price: "price",
             link: "link",
           }}
-          addNew={true}
+      
         />)
         
       
