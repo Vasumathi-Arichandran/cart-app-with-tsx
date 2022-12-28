@@ -57,17 +57,8 @@ fetchProducts();
 
   
   return (
- 
- <Router>
-  <Routes>
-  <Route path="/" element={ <><Products state={state} dispatch={dispatch}/> <ShowProducts state={state} dispatch={dispatch}/></>}>
- 
-  {/* <Products state={state} dispatch={dispatch}/>
-   <ShowProducts state={state} dispatch={dispatch}/> */}
-
-  </Route>
-  </Routes>
- </Router>
+  <div className='App'><Products state={state} dispatch={dispatch}/>
+   <ShowProducts state={state} dispatch={dispatch}/> </div>
    
 
    
