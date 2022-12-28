@@ -49,8 +49,8 @@ describe("Accordion test3", () => {
       expect(titleInput).toBeDefined()
       fireEvent.change(titleInput, { target: { value: "title" } })
       //expect(lessThanInput).toBe(33)
-      console.log("TitleInput",titleInput.value)
-      expect(titleInput.value).not.toBe(0)
+     // console.log("TitleInput",titleInput.value)
+      //expect(titleInput.value).not.toBe(0)
       
       
       const DescritionInput = screen.getByTestId('description-input')
@@ -58,24 +58,24 @@ describe("Accordion test3", () => {
       expect(DescritionInput).toBeDefined()
       fireEvent.change(DescritionInput, { target: { value: "description" } })
       //expect(lessThanInput).toBe(33)
-      console.log("DescritionInput",DescritionInput.value)
-      expect(DescritionInput.value).not.toBe(0)
+      //console.log("DescritionInput",DescritionInput.value)
+     // expect(DescritionInput.value).not.toBe(0)
       
       const priceInput = screen.getByTestId('price-input')
         
       expect(priceInput).toBeDefined()
       fireEvent.change(priceInput, { target: { value: 33 } })
       //expect(lessThanInput).toBe(33)
-      console.log("priceInput",priceInput.value)
-      expect(priceInput.value).not.toBe(0)
+      //console.log("priceInput",priceInput.value)
+      //expect(priceInput.value).not.toBe(0)
       
       const linkInput = screen.getByTestId('link-input')
       
       expect(linkInput).toBeDefined()
       fireEvent.change(linkInput, { target: { value: "https"} })
       //expect(greaterThanInput).toBe(323)
-      console.log("LinkInput",linkInput.value)
-      expect(linkInput.value).not.toBe(0)
+      //console.log("LinkInput",linkInput.value)
+     // expect(linkInput.value).not.toBe(0)
       
       
       // const addButton = screen.getByTestId('add-button')
