@@ -4,15 +4,28 @@ import React from 'react'
 import "./Products.css"
 
 
-export const Products=(props:{state:{products:[],showDetails:[],addedProducts:[]},dispatch:any})=>{
+export const Products=(props:{state:{products:[{
+    id: number,
+    title: string,
+    description: string,
+    link: string,
+    price: number,
+  },],showDetails:[],addedProducts:[ {
+    id: string,
+    title: string,
+    description: string,
+    link: string,
+    price: string,
+  },]},dispatch:any})=>{
     const{products, showDetails,addedProducts}=props.state;
   
 
-    return <div className="Products">
+    return <div  role="heading"className="Products">
        {
         addedProducts.map((pro:any)=>(
-    <div key={pro.id} className="selected">
-        <h4>{pro.title}</h4>
+    <div  key={pro.id} className="selected">
+        {/* PRODUCT TITLE IS DISPLAYED HERE */}
+        <h4 role="heading" data-testid="product-title" className='product-title' >{pro.title}</h4>
     <button className="show-details" key={pro.id} onClick={()=>props.dispatch({
             type:"SHOW_DETAILS",
             payload:{
@@ -25,19 +38,6 @@ export const Products=(props:{state:{products:[],showDetails:[],addedProducts:[]
             }
         })}>Show Details</button>
      
-        {/* { showDetails.some((p:any)=>p.id===pro.id)? (<button className="show-details">Hide Details</button>):
-        (<button className="show-details"  key={pro.id}onClick={()=>props.dispatch({
-            type:"SHOW_DETAILS",
-            payload:{
-                id:pro.id,
-                title:pro.title,
-                thumbnail:pro.thumbnail,
-                qty:1,
-                description:pro.description,
-                price:pro.price,
-            }
-        })}>Show Details</button>)
-    } */}
        
         </div>
 ))}

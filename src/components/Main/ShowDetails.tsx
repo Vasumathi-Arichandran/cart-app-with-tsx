@@ -1,18 +1,23 @@
 // Type json={ method: any, body: string, header: { "Content-Type": string, }; }
 import React from 'react'
 
-import { AddNew } from "./AddNew";
-import { Filter100To500 } from './Filter(100-500)';
-import { Filter500To1000 } from './Filter(500-1000)';
-import { Filter100 } from './Filter<100';
-import { Filter } from './Filter<40';
+import { AddNew } from "../AddProduct/AddProduct";
+import { FilterByPrice } from '../FilterProduct/FilterByPrice';
 
 
 export const ShowProducts=(props:{state:{products:[ {
-    price:number
-}],showDetails:[],addedProducts:[ {
-    price:number
-}]},dispatch:any})=>{
+    id: number,
+    title: string,
+    description: string,
+    link: string,
+    price: number,
+  }],showDetails:[],addedProducts:[ {
+    id: string,
+    title: string,
+    description: string,
+    link: string,
+    price: string,
+  }]},dispatch:any})=>{
   
     const {showDetails}=props.state;
 
@@ -25,7 +30,7 @@ async function submitHandler(prodData:any){
         // }
     });
     const data=await response.json();
-    console.log(data); 
+ 
 }
 
 
@@ -40,14 +45,12 @@ async function submitHandler(prodData:any){
 </div>
             )
         ):<h5>Click on Show Details to get details about Products</h5>}
-<Filter state={props.state} dispatch={props.dispatch}/>
-<Filter100 state={props.state} dispatch={props.dispatch}/>
-<Filter100To500 state={props.state} dispatch={props.dispatch}/>
-<Filter500To1000 state={props.state} dispatch={props.dispatch}/>
+
+        <FilterByPrice state={props.state} dispatch={props.dispatch}/>
 
 
 
-        <AddNew state={props.state} dispatch={props.dispatch} onConfirm={submitHandler} />
+ <AddNew state={props.state} dispatch={props.dispatch} onConfirm={submitHandler} />
 
     </div>
 }

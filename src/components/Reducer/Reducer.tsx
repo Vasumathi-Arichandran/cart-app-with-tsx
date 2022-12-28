@@ -44,7 +44,14 @@ switch(action.type){
   return{...state, addedProducts:action.payload}; 
 
 
-            //  return{...state, addedProducts:[state.addedProducts.filter(p=>p.id!==action.payload.id?p.title==action.payload.title:p.title ),...state.addedProducts]};
+    // Filter By search
+    case "FILTER_PRODUCTS":
+      return{...state, products:action.payload}; 
+  
+   case "FILTER_ADDED_PRODUCTS":
+    return{...state, addedProducts:action.payload}; 
+
+
     default:
         break;
 }
