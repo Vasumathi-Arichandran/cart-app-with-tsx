@@ -125,16 +125,16 @@ const lessThanInput = screen.getByTestId('less-than')
 expect(lessThanInput).toBeDefined()
 fireEvent.change(lessThanInput, { target: { value: 33 } })
 //expect(lessThanInput).toBe(33)
-console.log("less than value",lessThanInput.value)
-expect(lessThanInput.value).not.toBe(0)
+//console.log("less than value",lessThanInput.value)
+//expect(lessThanInput.value).not.toBe(0)
 
 
 const greaterThanInput = screen.getByTestId('greater-than')
 
 expect(greaterThanInput).toBeDefined()
 fireEvent.change(greaterThanInput, { target: { value: 323 } })
-console.log("greater than value",greaterThanInput.value)
-expect(greaterThanInput.value).not.toBe(0)
+//console.log("greater than value",greaterThanInput.value)
+//expect(greaterThanInput.value).not.toBe(0)
 
 
 const searchButton = screen.getByTestId('search-button')
